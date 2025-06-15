@@ -1,0 +1,38 @@
+/* app/absent/absent.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 80px; /* Padding bawah untuk ruang nav */
+  background-color: #ffffff;
+  min-height: 100vh;
+  gap: 30px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.optionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.optionCard:hover {
+  transform: scale(1.05);
+}
+
+.optionLabel {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+}

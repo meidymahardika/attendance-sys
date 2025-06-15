@@ -1,0 +1,33 @@
+/* app/components/BottomNav.module.css */
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #757575; /* Warna ikon tidak aktif */
+  font-size: 12px;
+  text-decoration: none;
+  flex: 1;
+}
+
+.navItem svg {
+  font-size: 24px;
+}
+
+.active {
+  color: #00bcd4; /* Warna ikon aktif */
+}

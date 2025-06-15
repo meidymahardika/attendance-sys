@@ -1,0 +1,107 @@
+/* app/profile/profile.module.css */
+
+.container {
+  background-color: #f4f7f6; /* Warna latar belakang default */
+  min-height: 100vh;
+  padding-bottom: 70px; /* Ruang untuk BottomNav */
+}
+
+/* Bagian Atas */
+.topSection {
+  background-color: #00bcd4; /* Warna biru toska */
+  color: white;
+  padding: 40px 20px 80px; /* Padding bawah lebih besar untuk ruang lengkungan */
+  position: relative; /* Penting untuk posisi ::after */
+}
+
+/* Trik untuk membuat lengkungan */
+.topSection::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* Sedikit tumpang tindih untuk menghindari celah */
+  width: 100%;
+  height: 60px; /* Ketinggian lengkungan */
+  background-color: #f4f7f6; /* Sama dengan warna .container */
+  border-top-left-radius: 100%; /* Membuat lengkungan */
+  border-top-right-radius: 100%;
+}
+
+.logoutIcon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profilePic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 4px solid white;
+}
+
+.profileInfo p, .profileInfo h1 {
+  margin: 0;
+}
+
+.profileId {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profileName {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profilePosition {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Bagian Bawah */
+.bottomSection {
+  background-color: #f4f7f6;
+  padding: 20px;
+  transform: translateY(-40px); /* Menarik ke atas agar menimpa lengkungan */
+  position: relative;
+  z-index: 2;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.detailItem:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detailIcon {
+  font-size: 24px;
+  color: #00bcd4;
+  width: 30px; /* Memberi lebar tetap agar rapi */
+  text-align: center;
+}

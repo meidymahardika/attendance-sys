@@ -1,0 +1,25 @@
+/* app/clearance/style.module.css */
+.pageWrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.mainContent { padding: 20px; flex-grow: 1; }
+.createButton {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background-color: #00cde4; color: white; border: none; width: 100%;
+  padding: 15px; border-radius: 30px; font-size: 18px; font-weight: bold;
+  cursor: pointer; text-decoration: none; margin-bottom: 30px;
+}
+.submissionList { display: flex; flex-direction: column; gap: 15px; }
+.submissionItem {
+  display: flex; justify-content: space-between; align-items: center;
+  background-color: white; padding: 20px; border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-decoration: none; color: inherit;
+}
+.itemDate { font-size: 16px; font-weight: bold; color: #333; margin: 0 0 5px; }
+.itemType { font-size: 14px; font-weight: 500; color: #555; margin: 0 0 5px; }
+.itemReason { font-size: 14px; color: #888; margin: 0; }
+.statusBadge {
+  padding: 6px 12px; border-radius: 20px; color: white;
+  font-size: 12px; font-weight: bold;
+}
+.approved { background-color: #4caf50; }
+.rejected { background-color: #f44336; }
+.onProgress { background-color: #757575; }

@@ -1,0 +1,80 @@
+/* app/passcard/passcard.module.css */
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #00bcd4;
+  color: white;
+  padding: 15px 20px;
+  flex-shrink: 0;
+}
+
+.header h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.backIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.mainContent {
+  flex-grow: 1;
+  background-color: #f4f7f6;
+  padding: 20px;
+}
+
+.searchContainer {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* app/passcard/passcard.module.css */
+
+.searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent; /* Pastikan transparan */
+  color: #333; /* Warna teks saat diketik (gelap agar terbaca) */
+}
+
+/* Style untuk placeholder */
+.searchInput::placeholder {
+  color: #555; /* Ubah warna placeholder menjadi abu-abu gelap */
+  opacity: 1; /* Pastikan opacity-nya penuh */
+}
+
+.searchIcon, .infoIcon {
+  color: #aaa;
+  font-size: 18px;
+}
+
+.messageContainer {
+  text-align: center;
+  margin-top: 100px;
+  color: #aaa;
+  font-size: 16px;
+}
+
+.messageContainer p {
+  margin: 4px 0;
+}

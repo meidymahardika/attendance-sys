@@ -1,0 +1,128 @@
+/* app/alker/[type]/style.module.css */
+
+.container {
+  background-color: #f4f7f6;
+  min-height: 100vh;
+}
+
+.topSection {
+  background-color: #00bcd4;
+  color: white;
+  padding: 15px 20px 80px;
+  position: relative;
+}
+
+.topSection::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 60px;
+  background-color: #f4f7f6;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.header h1 { font-size: 20px; margin: 0; font-weight: 600; }
+.backIcon { font-size: 20px; cursor: pointer; }
+
+.progressInfo h2 { font-size: 16px; margin: 0; font-weight: 500; }
+.progressInfo p { margin: 0; }
+.progressInfo p span { font-size: 32px; font-weight: bold; }
+
+.bottomSection {
+  padding: 0 20px;
+  transform: translateY(-50px);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.checkboxLabel input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+.agreementLabel span { font-size: 14px; line-height: 1.4; }
+.agreementLabel { color: red; }
+
+/* STYLE BARU UNTUK SEARCH BAR */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  color: #888;
+}
+
+.searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: none;
+}
+
+.clearIcon { 
+  cursor: pointer; 
+  color: #888;
+}
+
+.notFoundContainer {
+  text-align: center;
+  padding: 20px 0;
+}
+.notFoundText { font-weight: bold; font-size: 18px; margin: 10px 0 5px; color: #555; }
+.notFoundSubtext { margin: 0; color: #888; }
+
+.footer {
+  padding: 0 20px 20px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.submitButton:not(:disabled) {
+  background-color: #00bcd4;
+  color: white;
+}

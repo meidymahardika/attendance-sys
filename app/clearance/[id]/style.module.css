@@ -1,0 +1,19 @@
+/* app/clearance/[id]/style.module.css */
+.pageWrapper { background-color: #f4f7f6; min-height: 100vh; }
+.header { display: flex; align-items: center; gap: 15px; background-color: #00a9c0; color: white; padding: 15px 20px; }
+.header h1 { font-size: 20px; margin: 0; font-weight: 600; }
+.backIcon { font-size: 20px; cursor: pointer; }
+.mainContent { padding: 20px; }
+.statusBadge {
+  padding: 12px 20px; border-radius: 30px; color: white;
+  font-size: 18px; font-weight: bold; display: inline-block; margin-bottom: 20px;
+}
+.approved { background-color: #4caf50; }
+.rejected { background-color: #f44336; }
+.onProgress { background-color: #757575; }
+.title { font-size: 24px; font-weight: bold; color: #333; margin: 0 0 20px; }
+.detailSection { display: flex; flex-direction: column; gap: 15px; }
+.detailItem { border-bottom: 1px solid #eee; padding-bottom: 15px; }
+.detailLabel { font-size: 14px; color: #888; margin: 0 0 5px; }
+.detailValue { font-size: 16px; color: #333; margin: 0; white-space: pre-wrap; }
+.bukti { color: #555; font-style: italic; }

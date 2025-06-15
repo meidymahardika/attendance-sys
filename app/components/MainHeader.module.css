@@ -1,0 +1,11 @@
+/* app/components/MainHeader.module.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #00a9c0; /* Warna header sedikit beda */
+  color: white;
+  flex-shrink: 0;
+}
+.header svg { font-size: 24px; }

@@ -1,0 +1,132 @@
+/* app/report/absent/report.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #00bcd4;
+  color: white;
+  padding: 15px 20px;
+}
+
+.header h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.backIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.filterSection {
+  background-color: #00cde4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.dateInputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+}
+
+.dateInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.descriptionFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.descriptionFilter label {
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* app/report/absent/report.module.css */
+
+.descriptionDropdown {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  -webkit-appearance: none; /* Menghilangkan style default browser */
+  -moz-appearance: none;
+  appearance: none;
+
+  /* --- PERUBAHAN DI SINI --- */
+  color: white; /* Warna teks menjadi putih */
+  background-color: rgba(0, 0, 0, 0.2); /* Latar sedikit gelap agar menonjol dari background */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  
+  /* Trik untuk membuat ikon panah dropdown menjadi putih */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+}
+
+.filterButton {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #89eaf6;
+  color: #00798c;
+  font-weight: bold;
+  padding: 12px 20px;
+  margin-top: 20px;
+}
+
+.tableHeader span {
+  flex: 1;
+  text-align: center;
+}
+.tableHeader span:first-child { flex: 0.5; }
+.tableHeader span:last-child { flex: 1.5; }
+
+.tableBody {
+  padding: 40px 20px;
+  text-align: center;
+  color: #888;
+}

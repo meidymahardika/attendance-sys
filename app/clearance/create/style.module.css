@@ -1,0 +1,20 @@
+/* app/clearance/create/style.module.css */
+.pageWrapper { background-color: #f4f7f6; min-height: 100vh; }
+.header { display: flex; align-items: center; gap: 15px; background-color: #00a9c0; color: white; padding: 15px 20px; }
+.header h1 { font-size: 20px; margin: 0; font-weight: 600; }
+.backIcon { font-size: 20px; cursor: pointer; }
+.mainContent { padding: 20px; }
+.form { display: flex; flex-direction: column; gap: 20px; }
+.formGroup { display: flex; flex-direction: column; gap: 8px; }
+.formGroup label { font-weight: 500; color: #555; }
+.formGroup input, .formGroup select, .formGroup textarea {
+  width: 100%; padding: 12px 15px; border-radius: 12px; font-size: 16px;
+  border: 1px solid #ddd; background-color: white;
+}
+.inputWithIcon { display: flex; align-items: center; background-color: white; border: 1px solid #ddd; border-radius: 12px; }
+.inputWithIcon input { border: none; outline: none; }
+.inputWithIcon svg { margin-right: 15px; color: #aaa; }
+.submitButton {
+  background-color: #00cde4; color: white; border: none; padding: 15px;
+  border-radius: 30px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px;
+}

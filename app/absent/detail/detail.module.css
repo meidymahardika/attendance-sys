@@ -1,0 +1,212 @@
+/* app/absent/detail/detail.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 100px; /* Ruang lebih di bawah untuk nav */
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  gap: 25px;
+}
+
+/* Stepper Absensi */
+.stepper {
+  background-color: #00bcd4;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+.stepperTrack {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+}
+
+.stepperLine {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.stepperNode {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.stepperLabelsTop, .stepperLabelsBottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 0 5%;
+}
+
+.stepperLabelsTop {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.stepperLabelsBottom {
+  margin-top: 10px;
+}
+
+/* Kartu Feeling */
+.feelingCard {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.feelingTitle {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.feelingOptions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.feelingItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.feelingItem p {
+  margin: 0;
+  font-size: 40px; /* Ukuran Emoji */
+}
+
+.feelingItem span {
+  font-size: 14px;
+  color: #555;
+}
+
+.selected {
+  border-color: #00bcd4;
+  background-color: #e0f7fa;
+}
+
+/* Tombol Absen */
+.absenButton {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.absenButton:disabled {
+  background-color: #e0e0e0; /* Warna disabled */
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.absenButton:not(:disabled) {
+  background-color: #00bcd4; /* Warna enabled */
+  color: white;
+}
+
+/* === TAMBAHKAN CSS DI BAWAH INI === */
+
+/* Kartu Gejala */
+.symptomCard {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.symptomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.symptomItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.symptomItem span {
+  font-size: 12px;
+  color: #555;
+  font-weight: 500;
+}
+
+.symptomIconWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #e0e0e0; /* Border abu-abu awal */
+  transition: all 0.2s ease;
+  overflow: hidden; /* Memastikan gambar tetap bulat */
+}
+
+/* Style untuk gejala yang dipilih */
+.selectedSymptom .symptomIconWrapper {
+  border-color: #00bcd4; /* Border biru toska saat dipilih */
+  background-color: #e0f7fa;
+}
+
+/* Input untuk gejala lainnya */
+.otherSymptomInput {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+}
+/* app/absent/detail/detail.module.css */
+
+/* app/absent/detail/detail.module.css */
+
+.otherSymptomInput {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #f0f0f0; /* Beri sedikit warna latar */
+  color: #333; /* Warna teks saat diketik */
+}
+
+/* Style untuk placeholder */
+.otherSymptomInput::placeholder {
+  color: #555; /* Ubah warna placeholder menjadi abu-abu gelap */
+  opacity: 1;
+}

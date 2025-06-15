@@ -1,0 +1,201 @@
+/* app/home/home.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f7f6;
+  font-family: system-ui, sans-serif;
+  position: relative;
+  padding-bottom: 70px; /* Ruang untuk bottom nav */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #00bcd4; /* Biru toska */
+  color: white;
+}
+
+.header svg {
+  font-size: 24px;
+}
+
+/* Konten Utama */
+.mainContent {
+  padding: 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.placeholderBox {
+  height: 150px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.infoCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #e0f7fa; /* Biru muda */
+  color: #00796b; /* Hijau tua */
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.infoCard svg {
+  font-size: 24px;
+}
+
+.infoCardText p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.infoCardText p:first-child {
+  font-weight: bold;
+}
+
+/* Grid Menu */
+.actionGrid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.actionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #0077c2;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #eef7ff;
+  border-radius: 50%;
+  font-size: 28px;
+  color: #0077c2;
+}
+
+/* Navigasi Bawah */
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #757575; /* Warna ikon tidak aktif */
+  font-size: 12px;
+}
+
+.navItem svg {
+  font-size: 24px;
+}
+
+.active {
+  color: #00bcd4; /* Warna ikon aktif */
+}
+
+/* === TAMBAHKAN CSS DI BAWAH INI untuk konten modal === */
+
+.modalContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+.modalActionGrid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.modalActionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #0077c2;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.modalIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #eef7ff;
+  border-radius: 50%;
+  font-size: 32px;
+  color: #0077c2;
+}
+
+/* === TAMBAHKAN CSS DI BAWAH INI === */
+
+/* Modifikasi wrapper ikon modal agar bisa menampung teks di atasnya */
+.modalIconWrapper {
+  position: relative; /* Ini penting untuk posisi teks */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #eef7ff;
+  border-radius: 50%;
+  font-size: 32px;
+  color: #0077c2;
+}
+
+/* Style dasar untuk ikon kalender */
+.calendarIconBase {
+  color: #c0dfff; /* Membuat ikon kalender sedikit pudar */
+  font-size: 48px;
+}
+
+/* Style untuk teks (MON/AUG) di atas ikon kalender */
+.calendarText {
+  position: absolute; /* Posisikan teks di atas ikon */
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: 700;
+  color: #005a8d; /* Warna teks lebih gelap agar terbaca */
+}
