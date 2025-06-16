@@ -1,6 +1,5 @@
-// app/clearance/[id]/page.tsx
 "use client";
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import styles from './style.module.css';
 import { FaArrowLeft } from 'react-icons/fa';
 
@@ -11,9 +10,11 @@ const submissions = [
   { id: 3, type: 'Cuti', reason: 'Alasan Cuti', status: 'On Progress', date: '20 April 2025', izinDate: '20 April 2025 - 22 April 2025', bukti: 'Form Cuti' },
 ];
 
-export default function DetailPage({ params }: { params: { id: string } }) {
+export default function DetailPage() {
   const router = useRouter();
-  const submission = submissions.find(s => s.id === parseInt(params.id));
+  const params = useParams();
+  const idParam = Array.isArray(params.id) ? params.id[0] : params.id;
+  const submission = submissions.find(s => s.id === parseInt(idParam || "0"));
 
   if (!submission) {
     return <div>Data tidak ditemukan</div>;
@@ -27,7 +28,7 @@ export default function DetailPage({ params }: { params: { id: string } }) {
 
   return (
     <div className={styles.pageWrapper}>
-       <header className={styles.header}>
+      <header className={styles.header}>
         <FaArrowLeft className={styles.backIcon} onClick={() => router.back()} />
         <h1>Detail Izin</h1>
       </header>

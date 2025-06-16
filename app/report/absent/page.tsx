@@ -11,8 +11,8 @@ export default function ReportAbsentPage() {
   const router = useRouter();
   
   // State untuk filter (bisa dikembangkan nanti)
-  const [startDate, setStartDate] = useState("20-4-2025");
-  const [endDate, setEndDate] = useState("25-4-2025");
+  // const [startDate, setStartDate] = useState("20-4-2025");
+  // const [endDate, setEndDate] = useState("25-4-2025");
   const [description, setDescription] = useState("Mobile");
 
   return (
@@ -31,12 +31,14 @@ export default function ReportAbsentPage() {
         </div>
         <div className={styles.dateInputs}>
           <div className={styles.dateInput}>
-            <span>{startDate}</span>
+            {/* <span>{startDate}</span> */}
+            <span>20-4-2025</span>
             <FaCalendarAlt />
           </div>
           <span>-</span>
           <div className={styles.dateInput}>
-            <span>{endDate}</span>
+            <span></span>
+            <span>25-4-2025</span>
             <FaCalendarAlt />
           </div>
         </div>
