@@ -1,8 +1,12 @@
 import api from '@/utils/axiosInstance'
 
-export const getTodos = async () => {
+export const getClearance = async () => {
   try {
-    const response = await api.get('/roles')
+    const response = await api.get('/clearance', {
+      headers: { 
+        "Authorization": `Bearer ${`7|lxu8xIh3ZuEjXFzbkC47iynhcLbrDKmZcAIrH6Ck83429fba`}`
+      },
+    })
     console.log('axios res', response.data)
     return response.data
   } catch (error) {

@@ -38,7 +38,6 @@ export default function CreateSubmissionPage() {
     } catch (err) {
       alert("Gagal mengajukan izin!");
       console.log(err);
-      
     } finally {
       setLoading(false);
     }
