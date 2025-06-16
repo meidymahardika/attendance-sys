@@ -19,18 +19,21 @@ export default function CreateSubmissionPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
-    // Pakai FormData untuk file upload
+  
     const formData = new FormData();
     formData.append("jenis", jenisIzin);
-    formData.append("tanggal_mulai", dariTanggal);
-    formData.append("tanggal_akhir", sampaiTanggal);
-    formData.append("alasan", alasan);
-
+  
+    // Hanya append jika bukan Sakit
+    if (jenisIzin !== "Sakit") {
+      formData.append("tanggal_mulai", dariTanggal);
+      formData.append("tanggal_akhir", sampaiTanggal);
+      formData.append("alasan", alasan);
+    }
+  
     if (fileRef.current && fileRef.current.files && fileRef.current.files[0]) {
       formData.append("bukti", fileRef.current.files[0]);
     }
-
+  
     try {
       await postClearance(formData);
       alert("Berhasil mengajukan izin!");
@@ -50,60 +53,67 @@ export default function CreateSubmissionPage() {
         <h1>Create a submission</h1>
       </header>
       <main className={styles.mainContent}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <label>Jenis izin</label>
-            <select value={jenisIzin} onChange={e => setJenisIzin(e.target.value)} required>
-              <option value="">Pilih jenis izin</option>
-              <option value="Sakit">Sakit</option>
-              <option value="Izin">Izin</option>
-              <option value="Cuti">Cuti</option>
-            </select>
-          </div>
-          <div className={styles.formGroup}>
-            <label>Dari tanggal</label>
-            <div className={styles.inputWithIcon}>
-              <input
-                type="date"
-                value={dariTanggal}
-                onChange={e => setDariTanggal(e.target.value)}
-                required
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.formGroup}>
+          <label>Jenis izin</label>
+          <select value={jenisIzin} onChange={e => setJenisIzin(e.target.value)} required>
+            <option value="">Pilih jenis izin</option>
+            <option value="Sakit">Sakit</option>
+            <option value="Izin">Izin</option>
+            <option value="Cuti">Cuti</option>
+          </select>
+        </div>
+
+        {/* Hanya render ini jika jenisIzin TIDAK Sakit */}
+        {jenisIzin !== "Sakit" && (
+          <>
+            <div className={styles.formGroup}>
+              <label>Dari tanggal</label>
+              <div className={styles.inputWithIcon}>
+                <input
+                  type="date"
+                  value={dariTanggal}
+                  onChange={e => setDariTanggal(e.target.value)}
+                  required={jenisIzin !== "Sakit"}
+                />
+                <FaCalendarAlt />
+              </div>
+            </div>
+            <div className={styles.formGroup}>
+              <label>Sampai tanggal</label>
+              <div className={styles.inputWithIcon}>
+                <input
+                  type="date"
+                  value={sampaiTanggal}
+                  onChange={e => setSampaiTanggal(e.target.value)}
+                  required={jenisIzin !== "Sakit"}
+                />
+                <FaCalendarAlt />
+              </div>
+            </div>
+            <div className={styles.formGroup}>
+              <label>Alasan</label>
+              <textarea
+                rows={4}
+                value={alasan}
+                onChange={e => setAlasan(e.target.value)}
+                required={jenisIzin !== "Sakit"}
               />
-              <FaCalendarAlt />
             </div>
+          </>
+        )}
+
+        <div className={styles.formGroup}>
+          <label>Bukti izin</label>
+          <div className={styles.inputWithIcon}>
+            <input type="file" ref={fileRef} accept="image/*,application/pdf" />
+            <FaPaperclip />
           </div>
-          <div className={styles.formGroup}>
-            <label>Sampai tanggal</label>
-            <div className={styles.inputWithIcon}>
-              <input
-                type="date"
-                value={sampaiTanggal}
-                onChange={e => setSampaiTanggal(e.target.value)}
-                required
-              />
-              <FaCalendarAlt />
-            </div>
-          </div>
-          <div className={styles.formGroup}>
-            <label>Alasan</label>
-            <textarea
-              rows={4}
-              value={alasan}
-              onChange={e => setAlasan(e.target.value)}
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label>Bukti izin</label>
-            <div className={styles.inputWithIcon}>
-              <input type="file" ref={fileRef} accept="image/*,application/pdf" />
-              <FaPaperclip />
-            </div>
-          </div>
-          <button type="submit" className={styles.submitButton} disabled={loading}>
-            {loading ? "Submitting..." : "Submit"}
-          </button>
-        </form>
+        </div>
+        <button type="submit" className={styles.submitButton} disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
+        </button>
+      </form>
       </main>
     </div>
   );
