@@ -12,16 +12,17 @@ import {
   FaEnvelope,
   FaUsers,
 } from "react-icons/fa";
+import Link from 'next/link';
 
 export default function ProfilePage() {
   const profileDetails = [
     { icon: <FaVenusMars />, label: "Perempuan" },
-    { icon: <FaBirthdayCake />, label: "Jumat, 13 Juni 2025" }, // Menggunakan tanggal besok :)
-    { icon: <FaPrayingHands />, label: "null" },
-    { icon: <FaIdBadge />, label: "null" },
-    { icon: <FaBuilding />, label: "alamat" },
-    { icon: <FaEnvelope />, label: "email" },
-    { icon: <FaUsers />, label: "team?" },
+    { icon: <FaBirthdayCake />, label: "13 Juni 2003" }, // Menggunakan tanggal besok :)
+    { icon: <FaPrayingHands />, label: "Lorem ipsum dolor sit amet" },
+    { icon: <FaIdBadge />, label: "+628796543" },
+    { icon: <FaBuilding />, label: "Jakarta, Indonesia" },
+    { icon: <FaEnvelope />, label: "janedoe@mail.com" },
+    { icon: <FaUsers />, label: "Staff" },
   ];
 
   return (
@@ -29,13 +30,15 @@ export default function ProfilePage() {
       <main className={styles.container}>
         {/* Bagian Atas Berwarna Biru */}
         <div className={styles.topSection}>
-          <FaSignOutAlt className={styles.logoutIcon} />
+          <Link href={`/`}>
+            <FaSignOutAlt className={styles.logoutIcon} />
+          </Link>
           <div className={styles.profileHeader}>
             <div className={styles.profilePic}></div>
             <div className={styles.profileInfo}>
               <p className={styles.profileId}>12345678</p>
-              <h1 className={styles.profileName}>Nama</h1>
-              <p className={styles.profilePosition}>Jabatan</p>
+              <h1 className={styles.profileName}>Jane Doe</h1>
+              <p className={styles.profilePosition}>Software Engineer</p>
             </div>
           </div>
         </div>

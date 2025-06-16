@@ -11,9 +11,10 @@ import { getClearance } from '@/service/clearance/clearanceService';
 interface Submission {
   id: number;
   type: string;
-  reason: string;
+  tanggal_pengajuan: string;
+  jenis: string;
+  alasan: string;
   status: string;
-  date: string;
 }
 
 export default function ClearancePage() {
@@ -60,7 +61,7 @@ export default function ClearancePage() {
           <FaPlus /> Create a submission
         </Link>
 
-        <div className={styles.submissionList}>
+        <div className={styles.submissionList} style={{ marginBottom: 64 }}>
           {loading && <p>Loading...</p>}
           {error && <p className={styles.errorMsg}>{error}</p>}
           {!loading && !error && submissions.length === 0 && <p>No submission found.</p>}

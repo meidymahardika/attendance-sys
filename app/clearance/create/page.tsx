@@ -22,13 +22,13 @@ export default function CreateSubmissionPage() {
 
     // Pakai FormData untuk file upload
     const formData = new FormData();
-    formData.append("jenis_izin", jenisIzin);
-    formData.append("dari_tanggal", dariTanggal);
-    formData.append("sampai_tanggal", sampaiTanggal);
+    formData.append("jenis", jenisIzin);
+    formData.append("tanggal_mulai", dariTanggal);
+    formData.append("tanggal_akhir", sampaiTanggal);
     formData.append("alasan", alasan);
 
     if (fileRef.current && fileRef.current.files && fileRef.current.files[0]) {
-      formData.append("bukti_izin", fileRef.current.files[0]);
+      formData.append("bukti", fileRef.current.files[0]);
     }
 
     try {
