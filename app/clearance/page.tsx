@@ -68,11 +68,11 @@ export default function ClearancePage() {
           {!loading && !error && submissions.map((item) => (
             <Link href={`/clearance/${item.id}`} key={item.id} className={styles.submissionItem}>
               <div className={styles.itemInfo}>
-                <p className={styles.itemDate}>{item.date}</p>
-                <h3 className={styles.itemType}>{item.type}</h3>
-                <p className={styles.itemReason}>{item.reason}</p>
+                <p className={styles.itemDate}>{item.tanggal_pengajuan}</p>
+                <h3 className={styles.itemType}>{item.jenis}</h3>
+                <p className={styles.itemReason}>{item.alasan}</p>
               </div>
-              <div className={`${styles.statusBadge} ${getStatusClass(item.status)}`}>
+              <div className={`${styles.statusBadge} ${getStatusClass(item.status)}`} style={{ backgroundColor: item.status === 'rejected' ? '#E33B3B' : item.status === 'pending' ? '#727272' : '#5DC647' }}>
                 {item.status}
               </div>
             </Link>
