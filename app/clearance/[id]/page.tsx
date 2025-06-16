@@ -18,7 +18,6 @@ export default function DetailPage() {
   const router = useRouter();
   const params = useParams();
   const idParam = Array.isArray(params.id) ? params.id[0] : params.id;
-  console.log(1, idParam);
 
   const [submission, setSubmission] = useState<Submission | null>(null);
   const [loading, setLoading] = useState(true);
@@ -29,8 +28,6 @@ export default function DetailPage() {
     setLoading(true);
     getClearanceById(idParam)
       .then((res) => {
-        console.log(9, res);
-        
         // Ubah mapping jika field di API beda (lihat di bawah)
         setSubmission({
           id: res.data.id,
