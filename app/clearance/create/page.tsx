@@ -16,15 +16,20 @@ export default function CreateSubmissionPage() {
         <form className={styles.form}>
           <div className={styles.formGroup}>
             <label>Jenis izin</label>
-            <select><option>Pilih jenis izin</option></select>
+            <select>
+              <option>Pilih jenis izin</option>
+              <option>Sakit</option>
+              <option>Izin</option>
+              <option>Cuti</option>
+            </select>
           </div>
           <div className={styles.formGroup}>
             <label>Dari tanggal</label>
-            <div className={styles.inputWithIcon}><input type="text" placeholder="Masukkan tanggal" /><FaCalendarAlt /></div>
+            <div className={styles.inputWithIcon}><input type="date" placeholder="Masukkan tanggal" /><FaCalendarAlt /></div>
           </div>
           <div className={styles.formGroup}>
             <label>Sampai tanggal</label>
-            <div className={styles.inputWithIcon}><input type="text" placeholder="Masukkan tanggal" /><FaCalendarAlt /></div>
+            <div className={styles.inputWithIcon}><input type="date" placeholder="Masukkan tanggal" /><FaCalendarAlt /></div>
           </div>
           <div className={styles.formGroup}>
             <label>Alasan</label>
@@ -32,7 +37,7 @@ export default function CreateSubmissionPage() {
           </div>
           <div className={styles.formGroup}>
             <label>Bukti izin</label>
-            <div className={styles.inputWithIcon}><input type="text" readOnly value="bukti.pdf" /><FaPaperclip /></div>
+            <div className={styles.inputWithIcon}><input type="file" /><FaPaperclip /></div>
           </div>
           <button type="submit" className={styles.submitButton}>Submit</button>
         </form>
